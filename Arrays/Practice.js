@@ -1,28 +1,17 @@
-// function firstDuplicate(a) {
-//     let dictionary = {}
-//     for (let i =0; i<a.length; i++){
-//         if (dictionary[a[i]]){
-//             return a[i]
-//         }
-//         dictionary[a[i]] = true
-//     }
-//     return -1
-// }
+function checkPalindrome(inputString) {
+    let midIdx = Math.floor(inputString.length/2)
+    if (inputString.length % 2 !== 0){
+        let left = inputString.slice(0,midIdx)
+        let right = inputString.slice(midIdx+1).split('').reverse().join("")
+        return left === right
+    } else {
+        let left = inputString.slice(0,midIdx)
+        let right = inputString.slice(midIdx).split('').reverse().join("")
 
-// array = [2,1,3,5,3,2]
-
-// console.log(firstDuplicate(array))
-
-function centuryFromYear(year) {
-    if (year.length === 2){
-        year = "00" + year.toString()
-    } else if (year.length ===3 ){
-        year = "0" + year.toString()
+        return left === right
     }
-    
-    console.log(year)
 }
 
-centuryFromYear(10)
+string = "hlbeeykoqqqqokyeeblh"
 
-centuryFromYear(570)
+console.log(checkPalindrome(string))
